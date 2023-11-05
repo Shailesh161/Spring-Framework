@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">  
+  
+ <bean id="blog1" class="springpack.BlogDetails">
+	 <constructor-arg value="1" type="int"></constructor-arg>
+	 <constructor-arg value="social media" ></constructor-arg>
+	 <constructor-arg value="Social Media Is Fun"></constructor-arg>
+ </bean>
+ 
+ <bean id="blog2" class="springpack.BlogDetails">
+	 <constructor-arg value="2"></constructor-arg>
+	 <constructor-arg value="Politics"></constructor-arg>
+	 <constructor-arg value="Politics is Fun"></constructor-arg>
+ </bean>
+ 
+ <bean id="blogger" class="springpack.Blogger">
+	 <constructor-arg value="100" type="int"></constructor-arg>
+	 <constructor-arg value="Shailesh "></constructor-arg>
+	 <constructor-arg>
+		 <list>
+			 <ref bean="blog1" />
+			 <ref bean="blog2" />
+		 </list>
+	 </constructor-arg>
+ </bean>
+
+</beans>
